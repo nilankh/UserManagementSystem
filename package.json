@@ -1,0 +1,26 @@
+{
+  "name": "user-managment-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nilankh/UserManagementSystem.git"
+  },
+  "author": "NILANK NIKHIL",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nilankh/UserManagementSystem/issues"
+  },
+  "homepage": "https://github.com/nilankh/UserManagementSystem#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.3",
+    "nodemon": "^2.0.12"
+  }
+}
