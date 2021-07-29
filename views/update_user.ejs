@@ -1,5 +1,23 @@
-<!-- From handling -->
-<form method="POST" id="add_user">
+<!-- Include header -->
+<%- include('partials/_header.ejs') %>
+<!-- Include header -->
+
+<!-- Main site -->
+<main id="site-main">
+  <div class="container">
+    <div class="box-nav d-flex-justify-between">
+      <div class="filter">
+        <a href="/"><i class="fas fa-angle-double-left"></i>All Users</a>
+      </div>
+    </div>
+    <div class="form-title text-center">
+      <h2 class="text-dark">Update User</h2>
+      <span class="text-light">Use the below form to update an account</span>
+    </div>
+    
+    <!-- add user form -->
+    <!-- From handling -->
+<form method="POST" id="update_user">
   <div class="new_user">
     <div class="form-group">
       <label for="name" class="text-light">Name</label>
@@ -43,4 +61,14 @@
     </div>
   </div>
 </form>
-<!-- Form handling -->
+<!-- Form handling -->    
+    <!-- add user form -->
+  
+</div>
+</main>
+<!-- Main site -->
+
+
+<!-- Include footer -->
+<%- include('partials/_footer.ejs') %>
+<!-- Include header -->
