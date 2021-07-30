@@ -203,7 +203,7 @@ table{
 
 .radio input[type='radio']:focus + .radio-label:before{
     outline: none;
-    border-color:rgb(30, 130, 170);;
+    border-color:rgb(30, 130, 170);g;
 }
 
 .radio input[type='radio']:disabled + .radio-label:before{
