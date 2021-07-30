@@ -19,6 +19,8 @@ app.use(express.static('assets'));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+// Load routers
+app.use('/', require('./routes/router'));
 
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}!`);
