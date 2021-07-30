@@ -8,7 +8,7 @@ const app = express();
 const connectDB = require('./config/mongoose')
 
 dotenv.config({ path: 'config.env' });
-console.log(process.env)
+// console.log(process.env)
 const PORT = process.PORT || 8000;
 
 // Log requests

@@ -1,8 +1,9 @@
 const express = require('express');
 const route = express.Router();
 // This route method allow us to create different router in a seperate file.
-const services = require('../controllers/render')
 
+const services = require('../controllers/render')
+const controller = require('../controllers/controller')
 
 /*
     @description Root Route
@@ -22,5 +23,12 @@ route.get('/add-user', services.add_user);
     @method POST/update-user
 */
 route.get('/update-user', services.update_user);
+
+
+// API
+route.post('/api/users', controller.create);
+route.get('/api/users', controller.find);
+route.put('/api/users/:id', controller.update);
+route.delete('/api/users/:id', controller.delete);
 
 module.exports = route
