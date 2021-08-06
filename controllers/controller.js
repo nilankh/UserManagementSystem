@@ -31,18 +31,34 @@ exports.create = (req, res) => {
 
 // retrieve and return all users/retrieve and return a single user
 exports.find = (req, res) => {
-  UserDB.find()
-    .then((user) => {
-      res.send(user);
-    })
-    .catch((err) => {
-      res
-        .status(500)
-        .send({
+  // GEt a single User
+  if (req.query.id) {
+    const id = req.query.id;
+    UserDB.findById(id)
+      .then((data) => {
+        if (!data) {
+          res.status(400).send({ message: 'Not Found user with id' + id });
+        } else {
+          res.send(data);
+        }
+      })
+      .catch((err) => {
+        res
+          .status(500)
+          .send({ message: 'Error in reteriving user with id' + id });
+      });
+  } else {
+    UserDB.find()
+      .then((user) => {
+        res.send(user);
+      })
+      .catch((err) => {
+        res.status(500).send({
           message:
             err.message || 'Error occured in reteriving user information',
         });
-    });
+      });
+  }
 };
 
 // Update a new identified user by user id
@@ -54,11 +70,9 @@ exports.update = (req, res) => {
   UserDB.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
     .then((data) => {
       if (!data) {
-        res
-          .status(404)
-          .send({
-            message: `Cannot Update user with ${id}, Maybe user not found`,
-          });
+        res.status(404).send({
+          message: `Cannot Update user with ${id}, Maybe user not found`,
+        });
       } else {
         res.send(data);
       }
