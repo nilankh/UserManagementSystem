@@ -28,7 +28,7 @@ if (window.location.pathname == '/') {
     var id = $(this).attr('data-id');
 
     var request = {
-      url: `http://localhost:3000/api/users/${id}`,
+      url: `http://localhost:8000/api/users/${id}`,
       method: 'DELETE',
     };
 
